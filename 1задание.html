@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Черный Слон</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    color: #fff;
+    background: #111;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.lang button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1603297631957-9c8c2d9f2f5e') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 60px;
+    text-shadow: 3px 3px 10px black;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 40px;
+}
+
+.section-title {
+    font-size: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+    display: inline-block;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: #222;
+    padding: 15px;
+    border-radius: 15px;
+    flex: 1;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* IMAGES */
+img {
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    border: 3px solid #fff;
+    padding: 3px;
+    background: #000;
+    transition: 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+    border-color: gold;
+}
+
+/* NEWS */
+.news {
+    background: #000;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.news img {
+    width: 200px;
+}
+
+.news-text {
+    border-left: 2px solid white;
+    padding-left: 15px;
+}
+
+/* REVIEWS */
+.reviews {
+    display: flex;
+    gap: 20px;
+}
+
+.review {
+    flex: 1;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
+.review img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href="#tournaments" data-lang="menu1">Турниры</a>
+        <a href="#news" data-lang="menu2">Новости</a>
+        <a href="#reviews" data-lang="menu3">Отзывы</a>
+    </nav>
+
+    <div class="logo">♟ Черный Слон</div>
+
+    <div class="lang">
+        <button onclick="setLang('ru')">RU</button>
+        <button onclick="setLang('en')">EN</button>
+    </div>
+</header>
+
+<div class="hero">
+    <h1 data-lang="title">Черный Слон</h1>
+    <p data-lang="desc">Лучший шахматный клуб для всех уровней</p>
+</div>
+
+<section id="tournaments">
+    <h2 class="section-title" data-lang="tournaments">Турниры</h2>
+
+    <div class="cards">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1586165368502-1bad197a6461">
+            <h3>Алматы Open</h3>
+            <p data-lang="medal1">🥇 1 место</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1609743522653-52354461eb27">
+            <h3>Astana Cup</h3>
+            <p data-lang="medal2">🥈 2 место</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.chesscomfiles.com/uploads/event/5111ac8a-90ab-11ec-8927-9dea876964d8.d972d703.png">
+            <h3>Rapid Chess</h3>
+            <p data-lang="medal3">🥉 3 место</p>
+        </div>
+    </div>
+</section>
+
+<section id="news" class="news">
+    <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e">
+
+    <div class="news-text">
+        <h2 class="section-title" data-lang="news">Новости</h2>
+        <p data-lang="newsText">
+            Наш клуб выиграл международный турнир и продолжает развиваться.
+        </p>
+    </div>
+</section>
+
+<section id="reviews">
+    <h2 class="section-title" data-lang="reviews">Отзывы</h2>
+
+    <div class="reviews">
+        <div class="review">
+            <img src="https://randomuser.me/api/portraits/men/1.jpg">
+            <p data-lang="rev1">Отличный клуб!</p>
+        </div>
+
+        <div class="review">
+            <img src="https://randomuser.me/api/portraits/women/2.jpg">
+            <p data-lang="rev2">Мне очень нравится атмосфера</p>
+        </div>
+
+        <div class="review">
+            <img src="https://randomuser.me/api/portraits/men/3.jpg">
+            <p data-lang="rev3">Лучшие тренеры</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div>
+        📞 +7 777 000 00 00<br>
+        📞 +7 700 000 00 00
+    </div>
+
+    <div>
+        📍 Клуб "Черный Слон"<br>
+        Казахстан
+    </div>
+
+    <div>
+        🌐 Instagram | Facebook | Telegram
+    </div>
+</footer>
+
+<script>
+const translations = {
+    ru: {
+        title: "Черный Слон",
+        desc: "Лучший шахматный клуб для всех уровней",
+        tournaments: "Турниры",
+        news: "Новости",
+        reviews: "Отзывы",
+        newsText: "Наш клуб выиграл международный турнир и продолжает развиваться.",
+        rev1: "Отличный клуб!",
+        rev2: "Мне очень нравится атмосфера",
+        rev3: "Лучшие тренеры",
+        menu1: "Турниры",
+        menu2: "Новости",
+        menu3: "Отзывы",
+        medal1: "🥇 1 место",
+        medal2: "🥈 2 место",
+        medal3: "🥉 3 место"
+    },
+    en: {
+        title: "Black Elephant",
+        desc: "Best chess club for all levels",
+        tournaments: "Tournaments",
+        news: "News",
+        reviews: "Reviews",
+        newsText: "Our club won an international tournament and continues to grow.",
+        rev1: "Great club!",
+        rev2: "I love the atmosphere",
+        rev3: "Best coaches",
+        menu1: "Tournaments",
+        menu2: "News",
+        menu3: "Reviews",
+        medal1: "🥇 1st place",
+        medal2: "🥈 2nd place",
+        medal3: "🥉 3rd place"
+    }
+};
+
+function setLang(lang) {
+    document.querySelectorAll("[data-lang]").forEach(el => {
+        const key = el.getAttribute("data-lang");
+        el.textContent = translations[lang][key];
+    });
+}
+</script>
+
+</body>
+</html>
